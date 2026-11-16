@@ -1,4 +1,3 @@
-# Browser acceptance: second revision
 import pyxel
 
 
