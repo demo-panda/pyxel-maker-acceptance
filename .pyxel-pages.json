@@ -1,0 +1,15 @@
+{
+  "generator": "pyxel-maker-pages",
+  "manifestVersion": 1,
+  "repositoryId": 1459070256,
+  "repository": "demo-panda/pyxel-maker-acceptance",
+  "sourceBranch": "main",
+  "sourceHead": "bed0d58a115fea72570f1cbc11941c9d926587ad",
+  "managedFiles": [
+    "index.html",
+    ".nojekyll",
+    ".pyxel-pages.json"
+  ],
+  "deploymentId": "000eb266-6b3c-4cca-bdd1-7c7eb10557c4",
+  "deployedAt": "2026-11-16T00:36:01.303Z"
+}

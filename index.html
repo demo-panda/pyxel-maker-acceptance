@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; base-uri &#39;none&#39;; object-src &#39;none&#39;; form-action &#39;none&#39;; script-src &#39;sha256-yObsK8AjAgQcuOCvMXR4A5m0ZhKxXXyyD5aU/U6QAyA=&#39; &#39;unsafe-eval&#39; &#39;wasm-unsafe-eval&#39; https://cdn.jsdelivr.net https://moon-jam.me; style-src &#39;unsafe-inline&#39; https://cdn.jsdelivr.net https://moon-jam.me; img-src https://cdn.jsdelivr.net https://moon-jam.me data: blob:; connect-src https://cdn.jsdelivr.net https://moon-jam.me; worker-src blob:; media-src blob:">
+<title>pyxel-project</title>
+<style>html,body{margin:0;background:#000;color:#fff;font-family:system-ui}#load-status{padding:2rem}</style>
+</head>
+<body>
+<p id="load-status">Loading Pyxel… Internet access is required. Click the game screen to play.</p>
+<script src="https://moon-jam.me/pyxel/wasm/releases/zip-9.2.0-1/pyxel.js" integrity="sha384-a+qjQZba0P6fUizQtvVLojLgRYMOY7NrufHqtyGpFSqFvVCDc+ODAHMqb2LRp7As" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+const status = document.getElementById("load-status");
+(async () => {
+  try {
+    if (typeof launchPyxel !== "function") {
+      throw new Error("Cannot load Pyxel. Connect to the internet and reopen this file.");
+    }
+    status.remove();
+    await launchPyxel({"command":"play","name":"game.pyxapp","gamepad":"enabled","base64":"UEsDBAoAAAAAAIAEcF0AAAAAAAAAAAAAAAAFAAAAZ2FtZS9QSwMECgAAAAgAgARwXQUPgVvgAAAAvgEAAAwAAABnYW1lL21haW4ucHltUcFqwzAMvfsrRE429ULSrqMUUhg7D/oHxo0VZuYmxnZo+vezkzZh2YQO5j1JT3rWV9u5APY+oCGE1EZ6D+/WHgnEUNiAELrVQQjq0TRswlOMLXniaPlWcCi3BVuRppOKZte7cOi73tWYRzy+s6UwDc0HqKBY9bq+HRXz3ioZkE+VyskbI/NuE7fe7DFzU0E5Y7p5wqfqoXDTKnwtXb+2eTksIknz/+Nr4+mfoy8mTIsPHJIvcx7G3K7rAw6BvkZmv+OQnRMGH51C+JTf6DL+9KNVmpbR5j2LBpD4RZSRH1BLAwQKAAAACACABHBd7MR0eR8BAABYAQAAFwAAAGdhbWUvbXlfcmVzb3VyY2UucHl4cmVzC/BmZhFhYGDgAGJFhkKd0P0XQDwxBgZhIF1QWZGaE1+UWpxfWpScqleSn5vz9sJ9riYDEbYPv22PVjLoTwssrxaSNLwTyH5u6uxvvxRvyKtwNSs8Yj46d+7nvwWrnd77WvXccRe3CtoiuEhjjrmp+9qjN29embCoZrs47+5dnsWJvkZLVmh86vnU8+Sw8fsXPcuWncnYXPG09oHnd7OtL/TtXl/u/nC7vrrSaOXXU92/LCbGnL4nE582Z31y/CSlzh/7jyRLWFm37p5g4SerG/Ri3WnDLc37xWJCY5bt7HBP8+7aJsQjYZBwoIGRmQ3OOCMuae8S7ufz5LLNh927xQO8GZlEmHEHAQwsaWTAHiAB3qxsIClGIHQE0YwgHgBQSwMECgAAAAgAgARwXSxgS88JAAAABwAAABsAAABnYW1lLy5weXhhcHBfc3RhcnR1cF9zY3JpcHTLTczM0yuoBABQSwECFAAKAAAAAACABHBdAAAAAAAAAAAAAAAABQAAAAAAAAAAABAAAAAAAAAAZ2FtZS9QSwECFAAKAAAACACABHBdBQ+BW+AAAAC+AQAADAAAAAAAAAAAAAAAAAAjAAAAZ2FtZS9tYWluLnB5UEsBAhQACgAAAAgAgARwXezEdHkfAQAAWAEAABcAAAAAAAAAAAAAAAAALQEAAGdhbWUvbXlfcmVzb3VyY2UucHl4cmVzUEsBAhQACgAAAAgAgARwXSxgS88JAAAABwAAABsAAAAAAAAAAAAAAAAAgQIAAGdhbWUvLnB5eGFwcF9zdGFydHVwX3NjcmlwdFBLBQYAAAAABAAEAPsAAADDAgAAAAA="});
+  } catch (error) {
+    status.textContent = "Unable to start game: " + error.message;
+    document.body.appendChild(status);
+  }
+})();
+</script>
+</body>
+</html>
